@@ -2674,8 +2674,10 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	font-size:2.5em;
 }
 #panel-heading {
-	color: blue;
+	color: rgb(91, 182, 171);
 	text-align:center;
+	text-transform: uppercase;
+	text-align: center;
 }
 #panel1 {
 	align-content: center;
@@ -2755,7 +2757,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	background-color: #000000;
 }
 #contact .section-intro h1 {
-	color: #73dfdf;
+	color: #4a9dfc;
 	font-weight: 3.5rem;
 }
 #contact .section-intro h3 {
