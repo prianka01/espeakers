@@ -1291,12 +1291,14 @@ header.opaque {
 /* header logo */
 
 header .logo {
-    background: #fdc501;
+    /* background: #fdc501; */
     float: left;
     width: auto;
     margin-left: 15px;
     margin-right: 30px;
-    z-index: 600;
+	z-index: 600;
+	top: 10px;
+	left: 10px;
     /* add position relative since z-index only applies to  
   elements that have been given an explicit position */
     position: relative;
@@ -1310,10 +1312,10 @@ header .logo a {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
-    width: 114px;
-    height: 66px;
-    background: url("../images/esummit_logo_black.png") no-repeat center;
-    background-size: 100px 48px;
+    width: 50px;
+    height: 40px;
+    background: url("../images/logo.png") no-repeat center;
+    background-size: 50px 40px;
 }
 
 header a:hover {
@@ -1367,8 +1369,12 @@ header .header-social li a:hover {
         width: 100%;
     }
 
-    header .logo {
-        margin-left: -30px;
+    header .logo a {
+		display:none;
+		width: 40px;
+		height: 30px;
+		margin-top:8px;
+		background-size: 40px 30px;
     }
 }
 /* -------------------------------------------------------------------
@@ -1392,7 +1398,7 @@ header .header-social li a:hover {
 	background-color: black;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    float: left;
+    float: right;
 }
 
 /* hide toggle button */
@@ -1468,12 +1474,16 @@ ul#nav li.current a:after {
 --------------------------------------------------------------------- */
 
 @media only screen and (max-width: 768px) {
+	.logo {
+		display: none;
+	}
     #nav-wrap {
         z-index: 700;
         display: block;
         width: 100%;
-        float: none;
-        position: absolute;
+        float: right;
+		position: absolute;
+		height:60px;
         top: 0;
         right: 0;
     }
@@ -1482,8 +1492,9 @@ ul#nav li.current a:after {
     #nav-wrap>a {
         border: none;
         color: #ffffff;
-        height: 40px;
-        min-width: 40px;
+		height: 40px;
+		width: 0;
+        /* min-width: 40px; */
         font-size: 12px;
         text-align: left;
         float: right;
@@ -1539,7 +1550,7 @@ ul#nav li.current a:after {
 
     /* dropdown nav */
     #nav-wrap ul#nav {
-        background: #1c212a;
+        background: black;
         padding: 54px 45px 60px 45px;
         margin: 0;
         height: auto;
@@ -1548,7 +1559,7 @@ ul#nav li.current a:after {
         width: 100%;
         float: none;
         position: absolute;
-        top: 66px;
+        top: 60px;
         right: 0;
     }
 
