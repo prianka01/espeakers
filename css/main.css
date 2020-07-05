@@ -180,7 +180,7 @@ p.lead {
 	font-size: 2rem;
 	line-height: 1.8;
 	color: #4f4f4f;
-	margin-bottom: 5.6rem;
+	margin-bottom: 3.6rem;
 }
 @media only screen and (max-width: 768px) {
 	p.lead {
@@ -314,13 +314,13 @@ mark {
 	color: #000;
 }
 
-/* hr {
+hr {
 	border: solid #d2d2d2;
 	border-width: 1px 0 0;
 	clear: both;
 	margin: 2.4rem 0 1.5rem;
 	height: 0;
-} */
+}
 
 /* -------------------------------------------------------------------
  * Lists - (_document-setup.scss)
@@ -1908,7 +1908,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
  * ------------------------------------------------------------------- */
 #about {
 	position: relative;
-	padding: 4.2rem 0 7rem;
+	padding: 4.2rem 0 12rem;
 	background-color:white;
 	min-height: 696px;
 	text-align: center;
@@ -3032,216 +3032,10 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	}
 }
 
-/*14. Past Speakers and Sponsors
--------------------------------------------------------------------------------*/
-.sk li {
-    font-size: initial;
-    height: 100%;
-    vertical-align: top;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-		margin: 30px;
-}
-/* ul.sk
-{
-	overflow: auto;
- white-space: nowrap;
-} */
-/* used the above code for scroll but was not adjusting width */
-element.style {
-    transition: all 750ms ease-in-out 0s;
-    left: 0px;
-}
-
-.section-head h1 {
-    font: 23px/30px "montserrat-bold", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: #eb4101;
-    margin-bottom: 30px;
-    margin-top: 18px;
-}
-.section-head h1 span {
-    color: #fdc501;
-    position: relative;
-    left: 3px;
-}
-.section-head hr {
-    border: solid #283436;
-    border-width: 3px 0 0;
-    width: 100px;
-    margin: 11px 0 30px;
-    height: 0;
-    clear: both;
-    text-align: left;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-.obey {
-    font: 23px/36px "merriweather-regular", serif;
-    width: 95%;
-		color:white;
-}
-
-.section-head:hover h1+hr {
-    border-color: #fdc501;
-    width: 120px;
-    text-align: left;
-}
-
-@media only screen and (max-width: 768px) {
-    .section-head {
-        text-align: center;
-    }
-
-    .section-head p {
-        font: 18px/36px "merriweather-regular", serif;
-        width: auto;
-    }
-
-    .section-head h1+hr {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .section-head p {
-        font: 17px/33px "merriweather-regular", serif;
-        width: auto;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .section-head [class*="column"] {
-        padding: 0;
-    }
-}
-
-
-#speakers,
-#sponsors {
-    padding: 60px 0 0 0;
-}
-
-.slider-wrapper {
-    width: 100%;
-    max-width: 1064px;
-    margin: 40px auto 0 auto;
-    overflow: hidden;
-}
-
-#speaker-slider,
-#sponsor-slider {
-    width: 100%;
-    margin: 0;
-    padding: 0 28px;
-}
-
-.speaker {
-    overflow: hidden;
-    width:200px;
-}
-
-.sponsor {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.5s;
-}
-
-.speaker img {
-    width: 200px;
-    height: 200px;
-    position: center;
-    border-radius: 50%;
-}
-
-.sponsor img {
-    width: 200px;
-    height: 100px;
-    position: center;
-    border-radius: 20px;
-    background: white;
-    border: 2px solid #b6b5b4;
-    padding: 20px;
-}
-
-.speaker h3,
-.sponsor h3 {
-    text-align: center;
-    margin-bottom: 0;
-    padding: 0 0 0 0;
-		color:white;
-}
-
-.speaker h4,
-.sponsor h4 {
-    text-align: center;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    color: #e4b101;
-}
-
-#speakers .slider-wrapper>div {
-    /* margin-bottom: 100px; */
-}
-
-#sponsors .slider-wrapper>div {
-    /* background: white; */
-    display: flex;
-}
-
-.all-speakers a
-{
-	font: 14px/54px "montserrat-bold", sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    display: block;
-    height: 54px;
-    width: 220px;
-    border-radius: 3px;
-    background: #e64e04;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    margin:0px auto 40px auto;
-}
-
-/*
---------------------------------------------------------------------*/
-
-
 /* ===================================================================
  *  17. footer - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
- /* .col-three tab-full footer-social
- {
- 	float:left;
- }
- .col-four tab-full footer-subscribe end
- {
- 	float:right;
- } */
-.footerHR
-{
-	/* ye apply hi nahi ho rha color */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    max-width: 400px;
-    width: 80%;
-    border-top: 1px solid rgba(150, 150, 150, 0.1);
-		background-color: rgb(255,255,255,0.1);
-}
 footer {
 	margin: 0 0 5.4rem 0;
 	padding: 0;
@@ -3276,11 +3070,6 @@ footer h4.h05::after {
 	left: 0;
 }
 
-#imgsize
-{
-	font-size: 1.74em;
-	color:#ced8d0;
-}
 /* footer main
  * --------------------------------- */
 .footer-main {
@@ -3293,9 +3082,7 @@ footer h4.h05::after {
 }
 .footer-main ul li {
 	list-style: none;
-	/* padding-left: 0; */
-	float: left;
-  padding: 0px 20px 20px 20px;
+	padding-left: 0;
 }
 .footer-main ul a,
 .footer-main ul a:visited {
@@ -3345,28 +3132,6 @@ footer h4.h05::after {
 	color: #f9a828;
 	font-family: "montserrat-regular", sans-serif;
 }
-.footer-logos {
-
-}
-.footer-logo-1 {
-    width: 77px;
-    height: 60px;
-    margin: 0 10px;
-		float:left;
-}
-.beechka_div
-{
-	float: left;
-	font-size: 18px;
-	margin-top:23px;
-}
-.footer-logo-2 {
-    width: 150px;
-    height: 67px;
-    margin: 0 10px;
-		float: left;
-}
-
 
 /* footer bottom
  * --------------------------------- */
