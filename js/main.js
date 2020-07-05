@@ -7,15 +7,15 @@
 // 	}
 // });
 
-(function($) {
+(function ($) {
 
     "use strict";
 
     var cfg = {
-            defAnimation: "fadeInUp", // default css animation		
-            scrollDuration: 800, // smoothscroll duration
-            mailChimpURL: 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d'
-        },
+        defAnimation: "fadeInUp", // default css animation		
+        scrollDuration: 800, // smoothscroll duration
+        mailChimpURL: 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d'
+    },
 
         $WIN = $(window);
 
@@ -29,15 +29,15 @@
 
     /* Preloader 
      * -------------------------------------------------- */
-    var ssPreloader = function() {
+    var ssPreloader = function () {
 
-        $WIN.on('load', function() {
+        $WIN.on('load', function () {
 
             // force page scroll position to top at page refresh
             /*$('html, body').animate({ scrollTop: 0 }, 'normal');*/
 
             // will first fade out the loading animation 
-            $("#loader").fadeOut("slow", function() {
+            $("#loader").fadeOut("slow", function () {
 
                 // will fade out the whole DIV that covers the website.
                 $("#preloader").delay(300).fadeOut("slow");
@@ -49,18 +49,18 @@
 
     /* FitVids
     ------------------------------------------------------ */
-    var ssFitVids = function() {
+    var ssFitVids = function () {
         $(".fluid-video-wrapper").fitVids();
     };
 
 
     /*	Masonry
     ------------------------------------------------------ */
-    var ssMasonryFolio = function() {
+    var ssMasonryFolio = function () {
 
         var containerBricks = $('.bricks-wrapper');
 
-        containerBricks.imagesLoaded(function() {
+        containerBricks.imagesLoaded(function () {
             containerBricks.masonry({
                 itemSelector: '.brick',
                 resize: true
@@ -71,7 +71,7 @@
 
     /*	Light Gallery
     ------------------------------------------------------- */
-    var ssLightGallery = function() {
+    var ssLightGallery = function () {
 
         $('#folio-wrap').lightGallery({
             showThumbByDefault: false,
@@ -83,9 +83,9 @@
 
     /* Flexslider
      * ------------------------------------------------------ */
-    var ssFlexSlider = function() {
+    var ssFlexSlider = function () {
 
-        $WIN.on('load', function() {
+        $WIN.on('load', function () {
 
             $('#testimonial-slider').flexslider({
                 namespace: "flex-",
@@ -107,7 +107,7 @@
 
     /* Carousel
      * ------------------------------------------------------ */
-    var ssOwlCarousel = function() {
+    var ssOwlCarousel = function () {
 
         $(".owl-carousel").owlCarousel({
             nav: false,
@@ -139,11 +139,11 @@
 
     /* Menu on Scrolldown
      * ------------------------------------------------------ */
-    var ssMenuOnScrolldown = function() {
+    var ssMenuOnScrolldown = function () {
 
         var menuTrigger = $('#header-menu-trigger');
 
-        $WIN.on('scroll', function() {
+        $WIN.on('scroll', function () {
 
             if ($WIN.scrollTop() > 150) {
                 menuTrigger.addClass('opaque');
@@ -153,11 +153,44 @@
 
         });
     };
+    /*-----------------------------------------------------*/
+    /* Mobile Menu
+     ------------------------------------------------------ */
+    var menu_icon = $("<span class='menu-icon'>Menu</span>");
+    var toggle_button = $("<a>", {
+        id: "toggle-btn",
+        html: "",
+        title: "Menu",
+        href: "#"
+    });
+    var nav_wrap = $("nav#nav-wrap");
+    var nav = $("ul#nav");
+
+    /* if JS is enabled, remove the two a.mobile-btns
+          and dynamically prepend a.toggle-btn to #nav-wrap */
+    nav_wrap.find("a.mobile-btn").remove();
+    toggle_button.append(menu_icon);
+    nav_wrap.prepend(toggle_button);
+
+    toggle_button.on("click", function (e) {
+        e.preventDefault();
+        nav.slideToggle("fast");
+    });
+
+    if (toggle_button.is(":visible")) nav.addClass("mobile");
+    $(window).resize(function () {
+        if (toggle_button.is(":visible")) nav.addClass("mobile");
+        else nav.removeClass("mobile");
+    });
+
+    $("ul#nav li a").on("click", function () {
+        if (nav.hasClass("mobile")) nav.fadeOut("fast");
+    });
 
 
     /* OffCanvas Menu
      * ------------------------------------------------------ */
-    var ssOffCanvas = function() {
+    var ssOffCanvas = function () {
 
         var menuTrigger = $('#header-menu-trigger'),
             nav = $('#menu-nav-wrap'),
@@ -166,20 +199,20 @@
             mainContents = $('section, footer');
 
         // open-close menu by clicking on the menu icon
-        menuTrigger.on('click', function(e) {
+        menuTrigger.on('click', function (e) {
             e.preventDefault();
             menuTrigger.toggleClass('is-clicked');
             siteBody.toggleClass('menu-is-open');
         });
 
         // close menu by clicking the close button
-        closeButton.on('click', function(e) {
+        closeButton.on('click', function (e) {
             e.preventDefault();
             menuTrigger.trigger('click');
         });
 
         // close menu clicking outside the menu itself
-        siteBody.on('click', function(e) {
+        siteBody.on('click', function (e) {
             if (!$(e.target).is('#menu-nav-wrap, #header-menu-trigger, #header-menu-trigger span')) {
                 menuTrigger.removeClass('is-clicked');
                 siteBody.removeClass('menu-is-open');
@@ -191,9 +224,9 @@
 
     /* Smooth Scrolling
      * ------------------------------------------------------ */
-    var ssSmoothScroll = function() {
+    var ssSmoothScroll = function () {
 
-        $('.smoothscroll').on('click', function(e) {
+        $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
                 $target = $(target);
 
@@ -202,7 +235,7 @@
 
             $('html, body').stop().animate({
                 'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing').promise().done(function() {
+            }, cfg.scrollDuration, 'swing').promise().done(function () {
 
                 // check if menu is open
                 if ($('body').hasClass('menu-is-open')) {
@@ -218,16 +251,16 @@
 
     /* Placeholder Plugin Settings
      * ------------------------------------------------------ */
-    var ssPlaceholder = function() {
+    var ssPlaceholder = function () {
         $('input, textarea, select').placeholder();
     };
 
 
     /* Alert Boxes
     ------------------------------------------------------- */
-    var ssAlertBoxes = function() {
+    var ssAlertBoxes = function () {
 
-        $('.alert-box').on('click', '.close', function() {
+        $('.alert-box').on('click', '.close', function () {
             $(this).parent().fadeOut(500);
         });
 
@@ -236,19 +269,19 @@
 
     /* Animations
      * ------------------------------------------------------- */
-    var ssAnimations = function() {
+    var ssAnimations = function () {
 
         if (!$("html").hasClass('no-cssanimations')) {
             $('.animate-this').waypoint({
-                handler: function(direction) {
+                handler: function (direction) {
 
                     var defAnimationEfx = cfg.defAnimation;
 
                     if (direction === 'down' && !$(this.element).hasClass('animated')) {
                         $(this.element).addClass('item-animate');
 
-                        setTimeout(function() {
-                            $('body .animate-this.item-animate').each(function(ctr) {
+                        setTimeout(function () {
+                            $('body .animate-this.item-animate').each(function (ctr) {
                                 var el = $(this),
                                     animationEfx = el.data('animate') || null;
 
@@ -256,7 +289,7 @@
                                     animationEfx = defAnimationEfx;
                                 }
 
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     el.addClass(animationEfx + ' animated');
                                     el.removeClass('item-animate');
                                 }, ctr * 30);
@@ -277,13 +310,13 @@
 
     /* Intro Animation
      * ------------------------------------------------------- */
-    var ssIntroAnimation = function() {
+    var ssIntroAnimation = function () {
 
-        $WIN.on('load', function() {
+        $WIN.on('load', function () {
 
             if (!$("html").hasClass('no-cssanimations')) {
-                setTimeout(function() {
-                    $('.animate-intro').each(function(ctr) {
+                setTimeout(function () {
+                    $('.animate-intro').each(function (ctr) {
                         var el = $(this),
                             animationEfx = el.data('animate') || null;
 
@@ -291,7 +324,7 @@
                             animationEfx = cfg.defAnimation;
                         }
 
-                        setTimeout(function() {
+                        setTimeout(function () {
                             el.addClass(animationEfx + ' animated');
                         }, ctr * 300);
                     });
@@ -304,13 +337,13 @@
 
     /* Contact Form
      * ------------------------------------------------------ */
-    var ssContactForm = function() {
+    var ssContactForm = function () {
 
         /* local validation */
         $('#contactForm').validate({
 
             /* submit via ajax */
-            submitHandler: function(form) {
+            submitHandler: function (form) {
                 var sLoader = $('#submit-loader');
 
                 $.ajax({
@@ -318,10 +351,10 @@
                     url: "inc/sendEmail.php",
                     data: $(form).serialize(),
 
-                    beforeSend: function() {
+                    beforeSend: function () {
                         sLoader.fadeIn();
                     },
-                    success: function(msg) {
+                    success: function (msg) {
                         // Message was sent
                         if (msg == 'OK') {
                             sLoader.fadeOut();
@@ -336,7 +369,7 @@
                             $('#message-warning').fadeIn();
                         }
                     },
-                    error: function() {
+                    error: function () {
                         sLoader.fadeOut();
                         $('#message-warning').html("Something went wrong. Please try again.");
                         $('#message-warning').fadeIn();
@@ -350,7 +383,7 @@
 
     /* AjaxChimp
      * ------------------------------------------------------ */
-    var ssAjaxChimp = function() {
+    var ssAjaxChimp = function () {
 
         $('#mc-form').ajaxChimp({
             language: 'es',
@@ -383,7 +416,7 @@
 
     /* Back to Top
      * ------------------------------------------------------ */
-    var ssBackToTop = function() {
+    var ssBackToTop = function () {
 
         var pxShow = 500, // height on which the button will show
             fadeInTime = 400, // how slow/fast you want the button to show
@@ -392,7 +425,7 @@
             goTopButton = $("#go-top")
 
         // Show or hide the sticky footer button
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
             if ($(window).scrollTop() >= pxShow) {
                 goTopButton.fadeIn(fadeInTime);
             } else {
@@ -435,8 +468,8 @@ var c = 0;
 function fun() {
     if (c % 2 == 1) {
         camp.style.opacity = "100";
-        setTimeout(function() { camp.style.opacity = "0"; }, 3300);
-        setTimeout(function() {
+        setTimeout(function () { camp.style.opacity = "0"; }, 3300);
+        setTimeout(function () {
             camp.innerText = 'Register for E-Summit' +
                 "'19 ";
             var icon = document.createElement("i");
@@ -447,8 +480,8 @@ function fun() {
 
     } else {
         camp.style.opacity = "100";
-        setTimeout(function() { camp.style.opacity = "0"; }, 3300);
-        setTimeout(function() {
+        setTimeout(function () { camp.style.opacity = "0"; }, 3300);
+        setTimeout(function () {
             camp.innerText = 'Myriad Of Mavericks';
             var icon = document.createElement("i");
             icon.setAttribute("class", "fa fa-share");

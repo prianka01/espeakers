@@ -1606,23 +1606,15 @@ ul#nav li.current a:after {
         display: block;
     }
 }
-/* -------------------------------------------------------------------
- * responsive:
- * header section
- * ------------------------------------------------------------------- */
-@media only screen and (max-width: 768px) {
-	header .header-logo a {
-		width: 50px;
-		height: 40px;
-		background-size: 50px 40px;
-	}
-}
-@media only screen and (max-width: 400px) {
-	#header-menu-trigger .header-menu-text {
-		display: none;
-	}
-}
 
+/* make sure the menu is visible on larger screens
+--------------------------------------------------------------------- */
+
+@media only screen and (min-width: 769px) {
+    #nav-wrap ul#nav {
+        display: block !important;
+    }
+}
 /* ===================================================================
  *  10. home - (_layout.scss)
  *
