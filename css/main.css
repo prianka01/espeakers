@@ -2668,13 +2668,17 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	border-radius: 15px 50px;
 }
 #heading_speakers {
-	color:rgb(0, 180, 180);
+	color:#4a9dfc;
 	text-align: center;
-	letter-spacing: 1px;
-	font-size:2.5em;
+	font-size:3em;
+}
+#heading_moderator {
+	color:#4a9dfc;
+	font-size: 2.5rem;
+	text-align: center;
 }
 #panel-heading {
-	color: rgb(91, 182, 171);
+	color: rgb(131, 18, 184);
 	text-align:center;
 	text-transform: uppercase;
 	text-align: center;
@@ -2693,7 +2697,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 }
 
 .speaker-name h2 {
-	color: rgb(219, 243, 165);
+	color: rgba(203, 214, 223, 0.952);;
     font-size: 1.6rem;
 	text-transform: uppercase;
     margin: 0 0 0 0;
@@ -2738,12 +2742,14 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 
 #contact {
 	background-color: #111111;
-	background-image: url(../images/contact-bg.jpg);
-	background-repeat: no-repeat;
+	background-image: url(../images/compe.jpg);
+	/* background-repeat: repeat; */
+	background-repeat: repeat-y;
 	background-position: center;
-	-webkit-background-size: cover;
+	/* -webkit-background-size: cover;
 	-moz-background-size: cover;
-	background-size: cover;
+	background-size: cover; */
+	background-size: contain;
 	padding: 12rem 0 12rem;
 	position: relative;
 }

@@ -92,7 +92,8 @@ perspective effects (not including the modals and the overlay).
 
 .md-content > div {
     padding: 15px 10px 12px;
-    margin: 0;
+    /* margin: 0; */
+    /* margin-bottom: 50px; */
     font-weight: 300;
     font-size: 1.15em;
 }
@@ -113,7 +114,7 @@ perspective effects (not including the modals and the overlay).
 
 .md-content button {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     font-size: 0.8em;
 }
 
@@ -751,7 +752,7 @@ perspective effects (not including the modals and the overlay).
     margin: 0 0 0 0;
 }
 .md-pic-wrapper h2{
-    color: #e64e04;
+    color: #e64e04; 
     margin: 0 0 0 0;
 }
 .md-disc{
@@ -760,8 +761,8 @@ perspective effects (not including the modals and the overlay).
     overflow-y: auto;
     max-height: unset;
     float: none;
-    margin: 0 0 0 0;
-    padding: 10px;
+    /* margin-bottom: 100px; */
+    /* padding: 10px; */
     font-family: "montserrat-regular", sans-serif;
     font-size: 0.7em;
 }
@@ -770,7 +771,7 @@ perspective effects (not including the modals and the overlay).
 }
 .md-box-wrapper{
     margin: 0 0 0 0;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     z-index: 3333;
 }
 .md-close-wrapper{
@@ -778,7 +779,7 @@ perspective effects (not including the modals and the overlay).
     clear: both;
     text-align: center;
     padding: 10px 10px;
-    margin:  0 0 0 0;
+    /* margin-top: 100px; */
 }
 @media screen and (max-width: 750px){
     .md-pic-wrapper{
