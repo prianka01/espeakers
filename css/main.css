@@ -180,7 +180,7 @@ p.lead {
 	font-size: 2rem;
 	line-height: 1.8;
 	color: #4f4f4f;
-	margin-bottom: 3.6rem;
+	margin-bottom: 5.6rem;
 }
 @media only screen and (max-width: 768px) {
 	p.lead {
@@ -314,13 +314,13 @@ mark {
 	color: #000;
 }
 
-hr {
+/* hr {
 	border: solid #d2d2d2;
 	border-width: 1px 0 0;
 	clear: both;
 	margin: 2.4rem 0 1.5rem;
 	height: 0;
-}
+} */
 
 /* -------------------------------------------------------------------
  * Lists - (_document-setup.scss)
@@ -1269,23 +1269,18 @@ input::-moz-focus-inner {
  *  09. header styles - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
- header {
-    width: 100%;
-	position: fixed;
-	background-color: black;
-    left: 0;
-    top: 0;
-    z-index:1000;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+header {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 700;
 }
-
-header.opaque {
-    background: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+header .row {
+	height: auto;
+	max-width: 1300px;
+	position: relative;
 }
 
 /* header logo */
@@ -1335,28 +1330,84 @@ header .header-social {
     float: left;
     position: relative;
     top: -1px;
+/* -------------------------------------------------------------------
+ * header logo - (_layout.css)
+ * ------------------------------------------------------------------- */
+header .header-logo {
+	position: absolute;
+	left: 32px;
+	top: 32px;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+header .header-logo a {
+	display: block;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: none;
+	width: 80px;
+	height: 50px;
+	background: url("../images/logo.png") no-repeat center;
+	background-size: 60px 50px;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
-header .header-social li {
-    display: inline-block;
-    margin-right: 15px;
+/* -------------------------------------------------------------------
+ * menu trigger - (_layout.css)
+ * ------------------------------------------------------------------- */
+#header-menu-trigger {
+	display: block;
+	position: fixed;
+	right: 32px;
+	top: 30px;
+	height: 42px;
+	width: 42px;
+	line-height: 42px;
+	font-family: "montserrat-regular", sans-serif;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	color: rgba(255, 255, 255, 0.5);
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
-
-header .header-social li a {
-    color: #ffffff;
+#header-menu-trigger.opaque {
+	background-color: #000000;
 }
-
-header .header-social li a:hover {
-    color: #fdc501;
+#header-menu-trigger.opaque .header-menu-text {
+	background-color: #000000;
 }
-
-/* media queries:  
-/* header/header components */
-
-@media only screen and (max-width: 880px) {
-    header .header-social {
-        display: none;
-    }
+#header-menu-trigger:hover,
+#header-menu-trigger:focus {
+	color: #ffffff;
+}
+#header-menu-trigger .header-menu-text {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -75px;
+	width: 75px;
+	text-align: center;
+	background-color: transparent;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1376,19 +1427,68 @@ header .header-social li a:hover {
 		margin-top:8px;
 		background-size: 40px 30px;
     }
+#header-menu-trigger .header-menu-icon {
+	display: block;
+	height: 3px;
+	width: 24px;
+	background-color: #ffffff;
+	position: absolute;
+	top: 50%;
+	right: 9px;
+	margin-top: -1.5px;
 }
+#header-menu-trigger .header-menu-icon::before,
+#header-menu-trigger .header-menu-icon::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: inherit;
+	position: absolute;
+	left: 0;
+}
+#header-menu-trigger .header-menu-icon::before {
+	top: -9px;
+}
+#header-menu-trigger .header-menu-icon::after {
+	bottom: -9px;
+}
+
 /* -------------------------------------------------------------------
  * off-canvas menu - (_layout.scss)
  * ------------------------------------------------------------------- */
-/* primary navigation
---------------------------------------------------------------------- */
-
-#nav-wrap,
-#nav-wrap ul,
-#nav-wrap li,
-#nav-wrap a {
-    margin: 0;
-    padding: 0;
+#menu-nav-wrap {
+	background: #0c0c0c;
+	color: rgba(255, 255, 255, 0.25);
+	font-size: 1.5rem;
+	line-height: 1.6;
+	padding: 3.6rem 3rem;
+	height: 100%;
+	width: 240px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	z-index: 800;
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	transform: translateX(100%);
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+#menu-nav-wrap a,
+#menu-nav-wrap a:visited {
+	color: rgba(255, 255, 255, 0.5);
+}
+#menu-nav-wrap a:hover,
+#menu-nav-wrap a:focus,
+#menu-nav-wrap a:active {
+	color: white;
 }
 
 /* nav-wrap */
@@ -1399,80 +1499,114 @@ header .header-social li a:hover {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     float: right;
+#menu-nav-wrap h3 {
+	color: white;
+	font-family: "montserrat-regular", sans-serif;
+	font-size: 2rem;
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
 }
-
-/* hide toggle button */
-
-#nav-wrap>a {
-    display: none;
+#menu-nav-wrap .nav-list {
+	font-family: "montserrat-regular", sans-serif;
+	margin: 3.6rem 0 1.5rem 0;
+	padding: 0 0 1.8rem 0;
+	list-style: none;
+	line-height: 3.6rem;
 }
-
-ul#nav {
-	min-height: 66px;
-	z-index: 1000;
-    display: inline-block;
-    width: auto;
-    /* left align the menu */
-    text-align: left;
+#menu-nav-wrap .nav-list li {
+	padding-left: 0;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.03);
+	line-height: 4.2rem;
 }
-
-ul#nav li {
-    position: relative;
-    list-style: none;
-    display: inline-block;
-    height: 66px;
+#menu-nav-wrap .nav-list li:first-child {
+	border-top: 1px dotted rgba(255, 255, 255, 0.03);
 }
-
-/* Links */
-
-ul#nav li a {
-    /* 14px padding top + 14px padding bottom + 38px line-height = 66px */
-    display: block;
-    padding: 14px 12px;
-    line-height: 38px;
-    text-decoration: none;
-    text-align: left;
-    color: #ffffff;
-    position: relative;
-    -moz-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
+#menu-nav-wrap .nav-list li a {
+	color: rgba(255, 255, 255, 0.25);
+	display: block;
 }
-
-ul#nav li a:hover {
+#menu-nav-wrap .nav-list li a:hover,
+#menu-nav-wrap .nav-list li a:focus {
 	color: white;
 }
-
-ul#nav li a:active {
-    background-color: transparent !important;
+#menu-nav-wrap .header-social-list {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+	font-size: 2.1rem;
+}
+#menu-nav-wrap .header-social-list li {
+	margin-right: 12px;
+	padding-left: 0;
+	display: inline-block;
+}
+#menu-nav-wrap .header-social-list li a {
+	color: rgba(255, 255, 255, 0.15);
+}
+#menu-nav-wrap .header-social-list li a:hover,
+#menu-nav-wrap .header-social-list li a:focus {
+	color: white;
+}
+#menu-nav-wrap .header-social-list li:last-child {
+	margin: 0;
+}
+#menu-nav-wrap .close-button {
+	display: block;
+	height: 30px;
+	width: 30px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 36px;
+	right: 30px;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+#menu-nav-wrap .close-button span::before,
+#menu-nav-wrap .close-button span::after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 12px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 9px;
+	margin-top: -1px;
+}
+#menu-nav-wrap .close-button span::before {
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#menu-nav-wrap .close-button span::after {
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#menu-nav-wrap .sponsor-text {
+	font-family: "librebaskerville-regular", serif;
+	font-size: 1.4rem;
+	line-height: 3rem;
+}
+#menu-nav-wrap .sponsor-text span {
+	color: rgba(255, 255, 255, 0.5);
 }
 
-ul#nav li.current a {
-    color: #fdc501;
+/* menu is open */
+.menu-is-open #menu-nav-wrap {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+	visibility: visible;
+	-webkit-overflow-scrolling: touch;
 }
 
-ul#nav li.current a:after {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    margin-left: -23px;
-    background-color: white;
-    content: "\0020";
-    display: block;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-/* mobile navigation 
---------------------------------------------------------------------- */
-
+/* -------------------------------------------------------------------
+ * responsive:
+ * header section
+ * ------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
 	.logo {
 		display: none;
@@ -1616,16 +1750,18 @@ ul#nav li.current a:after {
     .no-js #nav-wrap:target ul#nav {
         display: block;
     }
+	header .header-logo a {
+		width: 50px;
+		height: 40px;
+		background-size: 50px 40px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	#header-menu-trigger .header-menu-text {
+		display: none;
+	}
 }
 
-/* make sure the menu is visible on larger screens
---------------------------------------------------------------------- */
-
-@media only screen and (min-width: 769px) {
-    #nav-wrap ul#nav {
-        display: block !important;
-    }
-}
 /* ===================================================================
  *  10. home - (_layout.scss)
  *
@@ -1634,7 +1770,6 @@ ul#nav li.current a:after {
 	width: 100%;
 	height: 100%;
 	background-color: black;
-	padding-top: 200px;
 	background-image: url(../images/main.jpg);
 	background-repeat: no-repeat;
 	background-position: center 30%;
@@ -1911,7 +2046,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
  * ------------------------------------------------------------------- */
 #about {
 	position: relative;
-	padding: 4.2rem 0 12rem;
+	padding: 4.2rem 0 7rem;
 	background-color:white;
 	min-height: 696px;
 	text-align: center;
@@ -3035,10 +3170,216 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	}
 }
 
+/*14. Past Speakers and Sponsors
+-------------------------------------------------------------------------------*/
+.sk li {
+    font-size: initial;
+    height: 100%;
+    vertical-align: top;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+		margin: 30px;
+}
+/* ul.sk
+{
+	overflow: auto;
+ white-space: nowrap;
+} */
+/* used the above code for scroll but was not adjusting width */
+element.style {
+    transition: all 750ms ease-in-out 0s;
+    left: 0px;
+}
+
+.section-head h1 {
+    font: 23px/30px "montserrat-bold", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #eb4101;
+    margin-bottom: 30px;
+    margin-top: 18px;
+}
+.section-head h1 span {
+    color: #fdc501;
+    position: relative;
+    left: 3px;
+}
+.section-head hr {
+    border: solid #283436;
+    border-width: 3px 0 0;
+    width: 100px;
+    margin: 11px 0 30px;
+    height: 0;
+    clear: both;
+    text-align: left;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.obey {
+    font: 23px/36px "merriweather-regular", serif;
+    width: 95%;
+		color:white;
+}
+
+.section-head:hover h1+hr {
+    border-color: #fdc501;
+    width: 120px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-head {
+        text-align: center;
+    }
+
+    .section-head p {
+        font: 18px/36px "merriweather-regular", serif;
+        width: auto;
+    }
+
+    .section-head h1+hr {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .section-head p {
+        font: 17px/33px "merriweather-regular", serif;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .section-head [class*="column"] {
+        padding: 0;
+    }
+}
+
+
+#speakers,
+#sponsors {
+    padding: 60px 0 0 0;
+}
+
+.slider-wrapper {
+    width: 100%;
+    max-width: 1064px;
+    margin: 40px auto 0 auto;
+    overflow: hidden;
+}
+
+#speaker-slider,
+#sponsor-slider {
+    width: 100%;
+    margin: 0;
+    padding: 0 28px;
+}
+
+.speaker {
+    overflow: hidden;
+    width:200px;
+}
+
+.sponsor {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+.speaker img {
+    width: 200px;
+    height: 200px;
+    position: center;
+    border-radius: 50%;
+}
+
+.sponsor img {
+    width: 200px;
+    height: 100px;
+    position: center;
+    border-radius: 20px;
+    background: white;
+    border: 2px solid #b6b5b4;
+    padding: 20px;
+}
+
+.speaker h3,
+.sponsor h3 {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+		color:white;
+}
+
+.speaker h4,
+.sponsor h4 {
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    color: #e4b101;
+}
+
+#speakers .slider-wrapper>div {
+    /* margin-bottom: 100px; */
+}
+
+#sponsors .slider-wrapper>div {
+    /* background: white; */
+    display: flex;
+}
+
+.all-speakers a
+{
+	font: 14px/54px "montserrat-bold", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: block;
+    height: 54px;
+    width: 220px;
+    border-radius: 3px;
+    background: #e64e04;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    margin:0px auto 40px auto;
+}
+
+/*
+--------------------------------------------------------------------*/
+
+
 /* ===================================================================
  *  17. footer - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
+ /* .col-three tab-full footer-social
+ {
+ 	float:left;
+ }
+ .col-four tab-full footer-subscribe end
+ {
+ 	float:right;
+ } */
+.footerHR
+{
+	/* ye apply hi nahi ho rha color */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    max-width: 400px;
+    width: 80%;
+    border-top: 1px solid rgba(150, 150, 150, 0.1);
+		background-color: rgb(255,255,255,0.1);
+}
 footer {
 	margin: 0 0 5.4rem 0;
 	padding: 0;
@@ -3073,6 +3414,11 @@ footer h4.h05::after {
 	left: 0;
 }
 
+#imgsize
+{
+	font-size: 1.74em;
+	color:#ced8d0;
+}
 /* footer main
  * --------------------------------- */
 .footer-main {
@@ -3085,7 +3431,9 @@ footer h4.h05::after {
 }
 .footer-main ul li {
 	list-style: none;
-	padding-left: 0;
+	/* padding-left: 0; */
+	float: left;
+  padding: 0px 20px 20px 20px;
 }
 .footer-main ul a,
 .footer-main ul a:visited {
@@ -3135,6 +3483,28 @@ footer h4.h05::after {
 	color: #f9a828;
 	font-family: "montserrat-regular", sans-serif;
 }
+.footer-logos {
+
+}
+.footer-logo-1 {
+    width: 77px;
+    height: 60px;
+    margin: 0 10px;
+		float:left;
+}
+.beechka_div
+{
+	float: left;
+	font-size: 18px;
+	margin-top:23px;
+}
+.footer-logo-2 {
+    width: 150px;
+    height: 67px;
+    margin: 0 10px;
+		float: left;
+}
+
 
 /* footer bottom
  * --------------------------------- */
