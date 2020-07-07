@@ -1915,7 +1915,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 #about {
 	position: relative;
 	padding: 4.2rem 0 7rem;
-	background-color:antiquewhite;
+	background-color:white;
 	min-height: 696px;
 	text-align: center;
 }
