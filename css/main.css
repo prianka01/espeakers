@@ -1197,7 +1197,7 @@ input::-moz-focus-inner {
 	line-height: 1.833;
 }
 .section-intro.with-bottom-sep {
-	padding-bottom: 4.2rem;
+	padding-bottom: 3rem;
 	position: relative;
 }
 .section-intro.with-bottom-sep::after {
@@ -1206,6 +1206,7 @@ input::-moz-focus-inner {
 	width: 200px;
 	background-color: rgba(242, 242, 242, 0.1);
 	text-align: center;
+	margin-top:20px;
 }
 
 /* -------------------------------------------------------------------
@@ -1299,7 +1300,7 @@ header .logo {
 	z-index: 600;
 	top: 10px;
 	left: 10px;
-    /* add position relative since z-index only applies to  
+    /* add position relative since z-index only applies to
   elements that have been given an explicit position */
     position: relative;
 }
@@ -1350,7 +1351,7 @@ header .header-social li a:hover {
     color: #fdc501;
 }
 
-/* media queries:  
+/* media queries:
 /* header/header components */
 
 @media only screen and (max-width: 880px) {
@@ -1427,12 +1428,14 @@ ul#nav li {
 
 ul#nav li a {
     /* 14px padding top + 14px padding bottom + 38px line-height = 66px */
+		font-family: "montserrat-bold", sans-serif;
+		font-size: 15.8px;
     display: block;
     padding: 14px 12px;
     line-height: 38px;
     text-decoration: none;
     text-align: left;
-    color: #ffffff;
+    color: antiquewhite;
     position: relative;
     -moz-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
@@ -1470,7 +1473,7 @@ ul#nav li.current a:after {
     transition: all 0.3s ease-in-out;
 }
 
-/* mobile navigation 
+/* mobile navigation
 --------------------------------------------------------------------- */
 
 @media only screen and (max-width: 768px) {
@@ -1924,7 +1927,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	font-family: "montserrat-bold", sans-serif;
 	font-size: 3.4rem;
 	line-height: 1.667;
-	color: #07617d;
+	color: #3d2a69;
 	text-transform: uppercase;
 	letter-spacing: 0.3rem;
 	position: relative;
@@ -2105,7 +2108,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 #services .services-list .h05 {
 	font-size: 1.9rem;
 	line-height: 1.765;
-	color: #6b94bb;
+	color: #73dfdf;
 	margin-bottom: 3rem;
 }
 
@@ -2714,7 +2717,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	margin-bottom: 5.4rem;
 }
 .competitions-content h6 {
-	color: #6b94bb;
+	color: #73dfdf;
 	font-size: 1.9rem;
 }
 /* ===================================================================
@@ -2781,7 +2784,7 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	margin-bottom: 5.4rem;
 }
 .contact-content h6 {
-	color: #6b94bb;
+	color: #73dfdf;
 	font-size: 1.9rem;
 }
 
@@ -3059,10 +3062,10 @@ element.style {
 }
 
 .section-head h1 {
-    font: 23px/30px "montserrat-bold", sans-serif;
-    text-transform: uppercase;
+    font: 34px "montserrat-bold", sans-serif;
+		text-transform: uppercase;
     letter-spacing: 2.5px;
-    color: #eb4101;
+    color: #73dfdf;
     margin-bottom: 30px;
     margin-top: 18px;
 }
@@ -3125,6 +3128,15 @@ element.style {
         padding: 0;
     }
 }
+@media only screen and (max-width: 600px) {
+    ul #speaker-slider1.sk {
+				text-align: center;
+				display: block;
+        margin-left: auto;
+				margin-right: auto;
+        width: auto;
+    }
+}
 
 
 #speakers,
@@ -3181,7 +3193,7 @@ element.style {
     text-align: center;
     margin-bottom: 0;
     padding: 0 0 0 0;
-		color:white;
+		color:#fdc501;
 }
 
 .speaker h4,
@@ -3189,7 +3201,7 @@ element.style {
     text-align: center;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    color: #e4b101;
+    color: antiquewhite;
 }
 
 #speakers .slider-wrapper>div {
@@ -3212,7 +3224,7 @@ element.style {
     height: 54px;
     width: 220px;
     border-radius: 3px;
-    background: #e64e04;
+    background: #3d2a69;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
     color: #ffffff;
     margin:0px auto 40px auto;
