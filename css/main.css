@@ -2791,7 +2791,8 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	text-align: center;
 }
 .contact-content:hover .image_workshop {
-	opacity: 0.3;
+	opacity: 0.1;
+	transform: translateY(-5px);
   }
 /* .md-modal .md-content {
     max-width: 90vw;
