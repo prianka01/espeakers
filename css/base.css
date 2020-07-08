@@ -801,15 +801,19 @@ textarea {
   margin-right: auto;
   text-align: center;
 }
-.profile-card{
+.profile-card .a{
             position:relative;
             overflow: hidden;
             margin-bottom:10px;
         }
         .profile-card .profile-img img{
-            width:115%;
+            width:400px;
             height:auto;
-            border-radius : 15px 50px;
+            border-radius : 0px;
+            transition: .3s ease;
+        }
+        .profile-img:hover .lazyload {
+          opacity: 0.3;
         }
         .profile-card:hover .profile-content::before{
             transition: all 0.50s linear;

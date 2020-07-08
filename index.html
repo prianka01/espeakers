@@ -46,11 +46,11 @@
     <!-- CSS
 		================================================== -->
     <link rel="stylesheet" href="css/base.min.css">
-
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/main.css?ver=1.1">
     <link rel="stylesheet" href="css/font-awesome/css/all.css">
-
+    <link rel="stylesheet" href="css/modal.css">
     <!-- favicons
 		================================================== -->
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
@@ -482,60 +482,88 @@
 
     <!-- workshops ================================================== -->
     <section id="contact">
+        <div class="md-modal md-effect-9" id="sd1">
+            <div class="md-content">
+                <div class="md-box-wrapper">
+                    <div class="md-pic-wrapper">
+                        <!-- <img src="images/speakers/Mohandas Pai.jpg"> -->
+                        <h1>Tech 101 For Start-Ups</h1>
 
+                    </div>
+                    <div class="md-disc">
+                        Things to know before you get started with building the tech
+                        for your startup. This workshop aims to get you equipped with the right tools
+                        and technical knowledge that you need before beginning your venture. These would
+                        be some absolutely crucial things that you wouldn’t want to miss out on.
+                    </div>
+                </div>
+                <div class="md-close-wrapper">
+                    <button class="md-close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="md-modal md-effect-9" id="sd2">
+            <div class="md-content">
+                <div class="md-box-wrapper">
+                    <div class="md-pic-wrapper">
+                        <!-- <img src="images/speakers/Kris Gopalakrishnan.jpg"> -->
+                        <h1>Idea Validation</h1>
+
+                    </div>
+                    <div class="md-disc">
+                        Idea validation is the process of testing and validating your
+                        idea prior to launching your business name, tagline, product, service or website.
+                        This workshop would save you hundreds of hours by teaching you the art of
+                        validating an idea so that your start-up can make an impact entry into the market.
+                    </div>
+                </div>
+                <div class="md-close-wrapper">
+                    <button class="md-close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="md-overlay"></div>
         <div class="overlay"></div>
 
         <div class="row narrow section-intro with-bottom-sep animate-this">
 
             <!-- <h3>Workshops</h3> -->
             <h1>Workshops</h1>
-            <img class="img3" src="images/workshops.jpg">
-        </div>
-        <div class="row contact-content">
+            <!-- <img class="img3" src="images/workshops.jpg"> -->
 
-            <div>
-
-            </div>
-            <div class="services-list block-1-1 block-tab-full group">
+            <div class="services-list block-1-2 block-tab-full group">
 
                 <div class="bgrid service-item animate-this">
-                    <!--
-                            <a href="https://www.ecelliitk.org/esummit/" class="icon">
-                                <i class="icon-leaf"></i>
-                            </a>-->
-
-                    <div class="contact-content">
-                        <!--<a href="https://www.ecelliitk.org/esummit/">
-                                    <h3 class="h05">E-Summit</h3>
-                                </a>-->
-                        <h6 class="h05">Tech 101 for Start-ups
-                        </h6>
-
-                        <p class="events-desc">Things to know before you get started with building the tech
-                            for your startup. This workshop aims to get you equipped with the right tools
-                            and technical knowledge that you need before beginning your venture. These would
-                            be some absolutely crucial things that you wouldn’t want to miss out on.
-
-                        </p>
-
-                    </div>
-                    <div class="contact-content">
-                        <!--<a href="https://www.ecelliitk.org/esummit/">
-                                        <h3 class="h05">E-Summit</h3>
-                                    </a>-->
-                        <h6 class="h05">Idea Validation</h6>
-
-                        <p class="events-desc">Idea validation is the process of testing and validating your
-                            idea prior to launching your business name, tagline, product, service or website.
-                            This workshop would save you hundreds of hours by teaching you the art of
-                            validating an idea so that your start-up can make an impact entry into the market.
-                        </p>
+                    <div class="profile-card">
+                        <a id="bsd1" href="javascript:run_model('sd1','bsd1')">
+                            <div class="profile-img">
+                                <img src="images/tech_101.jpg" alt="Team Image" class="lazyload"
+                                    style="display: inline-block;" />
+                            </div>
+                            <!-- <div class="speaker-name">
+                                <h2>Tech 101 For Startups</h2>
+                            </div> -->
+                        </a>
                     </div>
 
                 </div>
-                <br>
-                </br>
+                <div class="bgrid service-item animate-this">
+
+                    <div class="profile-card">
+                        <a id="bsd2" href="javascript:run_model('sd2','bsd2')">
+                            <div class="profile-img">
+                                <img src="images/idea_validation.jpg" alt="Team Image" class="lazyload"
+                                    style="display: inline-block;" />
+                            </div>
+                            <!-- <div class="speaker-name">
+                                <h2>Tech 101 For Startups</h2>
+                            </div> -->
+                        </a>
+                    </div>
+                </div>
             </div>
+
+
             <form>
                 <button class="button9" style="vertical-align:middle"
                     formaction="https://www.townscript.com/e/entrepreneurial-extravaganza-e-square?fbclid=IwAR1wX2GO3gxQjk4pg6Dftf1JMQVuGewejXGK-6yZ--dINF4mK-V5EfmzC9s">
@@ -633,8 +661,9 @@
             </div>
         </div>
         <div class="slider-wrapper">
-            <ul id="speaker-slider1"  class="sk" style="transition: all 0s ease 0s; left: 0px; margin-left:auto;margin-right:auto;">
-                <li class="speaker" >
+            <ul id="speaker-slider1" class="sk"
+                style="transition: all 0s ease 0s; left: 0px; margin-left:auto;margin-right:auto;">
+                <li class="speaker">
                     <img src="images/speakers/Kris Gopalakrishnan.jpg" class="lazyload">
                     <h3> Mr Kris Gopalakrishnan</h3>
                     <h4>Chairman,<br>Axilor Ventures.</h4>
@@ -852,55 +881,55 @@
 
                 <div class="col-three tab-full footer-social">
 
-                  <ul class="social-links">
-                      <li class="animate-intro">
-                          <a href="https://facebook.com/ecelliitk">
-                              <i class="fab fa-facebook-square" id="imgsize"></i>
-                          </a>
-                      </li>
-                      <li class="animate-intro">
-                          <a href="https://m.me/ecelliitk" class="changecolor">
-                              <i class="fab fa-facebook-messenger" id="imgsize"></i>
-                          </a>
-                      </li>
-                      <li class="animate-intro">
-                          <a href="https://www.linkedin.com/company/entrepreneurship-cell-iit-kanpur/">
-                              <i class="fab fa-linkedin" id="imgsize"></i>
-                          </a>
-                      </li>
-                      <li class="animate-intro">
-                          <a href="https://www.instagram.com/ecelliitk/">
-                              <i class="fab fa-instagram" id="imgsize"></i>
-                          </a>
-                      </li>
-                      <li class="animate-intro">
-                          <a href="https://twitter.com/ecelliitk">
-                              <i class="fab fa-twitter" id="imgsize"></i>
-                          </a>
-                      </li>
-                      <li class="animate-intro">
-                          <a href="https://www.youtube.com/channel/UCvxavCg0UhXq6oKkrBHc9zQ">
-                              <i class="fab fa-youtube" id="imgsize"></i>
-                          </a>
-                      </li>
-                  </ul>
-                  <br>
-                  <hr class="footerHR">
-                  <br>
-                  <div class="info">
+                    <ul class="social-links">
+                        <li class="animate-intro">
+                            <a href="https://facebook.com/ecelliitk">
+                                <i class="fab fa-facebook-square" id="imgsize"></i>
+                            </a>
+                        </li>
+                        <li class="animate-intro">
+                            <a href="https://m.me/ecelliitk" class="changecolor">
+                                <i class="fab fa-facebook-messenger" id="imgsize"></i>
+                            </a>
+                        </li>
+                        <li class="animate-intro">
+                            <a href="https://www.linkedin.com/company/entrepreneurship-cell-iit-kanpur/">
+                                <i class="fab fa-linkedin" id="imgsize"></i>
+                            </a>
+                        </li>
+                        <li class="animate-intro">
+                            <a href="https://www.instagram.com/ecelliitk/">
+                                <i class="fab fa-instagram" id="imgsize"></i>
+                            </a>
+                        </li>
+                        <li class="animate-intro">
+                            <a href="https://twitter.com/ecelliitk">
+                                <i class="fab fa-twitter" id="imgsize"></i>
+                            </a>
+                        </li>
+                        <li class="animate-intro">
+                            <a href="https://www.youtube.com/channel/UCvxavCg0UhXq6oKkrBHc9zQ">
+                                <i class="fab fa-youtube" id="imgsize"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                    <hr class="footerHR">
+                    <br>
+                    <div class="info">
 
-                      <div class="footer-logos">
+                        <div class="footer-logos">
 
-                          <img src="images/ent_extravaganza.jpg" class="footer-logo-1">
-                          <span class="beechka_div">organised by</span>
-                          <a href="https://www.ecelliitk.org/" target="_blank">
-                              <img src="images/logoW@2x.png" class="footer-logo-2">
-                          </a>
-                          <!-- <span>in association with</span>
+                            <img src="images/ent_extravaganza.jpg" class="footer-logo-1">
+                            <span class="beechka_div">organised by</span>
+                            <a href="https://www.ecelliitk.org/" target="_blank">
+                                <img src="images/logoW@2x.png" class="footer-logo-2">
+                            </a>
+                            <!-- <span>in association with</span>
                           <img src="images/tie.jpg" class="footer-logo-3"> -->
-                      </div>
+                        </div>
 
-                  </div>
+                    </div>
 
 
                 </div>
@@ -966,7 +995,7 @@
                  ================================================== -->
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
-
+    <script src="js/modal.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js?ver=1.2"></script>
     <!-- script

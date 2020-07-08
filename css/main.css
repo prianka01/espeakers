@@ -425,7 +425,7 @@ img.pull-left {
  * block grids paddings
  * ------------------------------------------------------------------- */
 .bgrid {
-	padding: 0 20px;
+	padding: 40px 30px;
 }
 @media only screen and (max-width: 1024px) {
 	.bgrid {
@@ -1252,7 +1252,7 @@ input::-moz-focus-inner {
 }
 
 .narrow {
-	max-width: 800px;
+	max-width: 1000px;
 }
 
 .js .animate-this,
@@ -2769,7 +2769,14 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 #contact .section-intro p.lead {
 	color: rgba(242, 242, 242, 0.4);
 }
-
+.image_workshop {
+	opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
 .contact-content {
 	max-width: 1024px;
 	margin-top: 3rem;
@@ -2778,6 +2785,12 @@ html[data-useragent*="MSIE 10.0"] .scrolldown,
 	position: relative;
 	text-align: center;
 }
+.contact-content:hover .image_workshop {
+	opacity: 0.3;
+  }
+/* .md-modal .md-content {
+    max-width: 90vw;
+} */
 
 .contact-content p {
 	color: rgba(203, 214, 223, 0.952);
